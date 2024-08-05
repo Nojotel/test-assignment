@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поиск</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Посты</h1>
+    <input type="text" id="search" placeholder="Поиск" oninput="filterTable()" />
+    <table id="posts-table">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">ID</th>
+          <th onclick="sortTable(1)">Title</th>
+          <th onclick="sortTable(2)">Body</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="./script.js"></script>
+  </body>
+</html>

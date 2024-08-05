@@ -1,0 +1,282 @@
+/* Общие стили */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Стили для кнопок */
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+}
+
+.button--open-modal {
+  background-color: #007bff;
+  color: white;
+}
+
+.button--submit {
+  height: 48px;
+  border-radius: 4px;
+  background: rgb(229, 38, 110);
+  margin-bottom: 15px;
+  color: rgb(255, 255, 255);
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+
+  text-align: center;
+  color: white;
+}
+
+.button--submit:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.button--close {
+  background-color: transparent;
+  color: #0848c0;
+}
+
+.button--close:hover {
+  background-color: transparent;
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: auto;
+  padding: 0 20px;
+}
+
+.modal__content {
+  border-radius: 12px;
+  background: #fff;
+  margin: 5% auto;
+  padding: 53px 97px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 754px;
+  box-sizing: border-box;
+}
+
+.modal__title {
+  color: #0c1014;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 34px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Стили для формы */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__fields {
+  width: 65%;
+}
+
+.form__upload {
+  position: relative;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.form__field {
+  position: relative;
+  border: 1px solid rgb(214, 218, 222);
+  border-radius: 2px;
+  background: rgb(255, 255, 255);
+  height: 56px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.form__field input,
+.form__field select {
+  width: 100%;
+  padding: 20px 10px 10px 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: none;
+  height: 56px;
+  font-family: "PT Sans", sans-serif;
+  background: transparent;
+}
+
+.form__field select {
+  width: 99%;
+}
+
+.form__field input::placeholder {
+  opacity: 0;
+}
+
+.form__field img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+}
+
+.form__field input,
+.form__field textarea {
+  padding-right: 30px;
+}
+
+.form__field select {
+  padding-right: 30px;
+}
+
+.form__field label {
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+  color: #000;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.form__field input:focus + label,
+.form__field input:not(:placeholder-shown) + label,
+.form__field select:focus + label,
+.form__field select:not(:invalid) + label {
+  top: 3px;
+  left: 10px;
+  font-size: 12px;
+  color: rgb(106, 110, 114);
+}
+
+.form__required-star {
+  color: #d90000;
+  font-size: 14px;
+}
+
+.form__upload-label {
+  margin-bottom: -3px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 171%;
+  color: #6a6e72;
+}
+
+.form__upload-preview {
+  width: 163.33px;
+  height: 163.33px;
+  border: 0;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  font-family: PT Sans;
+  font-size: 18.67px;
+  font-family: "PT Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url(./image/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  text-decoration-line: underline;
+  text-align: center;
+  padding-top: 35px;
+}
+
+.form__upload-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.form__upload-remove {
+  z-index: 10;
+  position: absolute;
+  top: 55px;
+  left: 145px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+}
+
+.form__upload-load {
+  z-index: 5;
+  position: absolute;
+  top: 80px;
+}
+#logo {
+  opacity: 0;
+  z-index: 50;
+  position: relative;
+  top: 100px;
+  left: 76px;
+}
+
+@media screen and (max-width: 800px) {
+  .modal__content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .form__section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form__fields,
+  .form__upload {
+    width: 100%;
+  }
+  .form__upload-load {
+    left: 65px;
+  }
+  .form__fields {
+    order: 2;
+  }
+  .form__upload {
+    order: 1;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  .form__upload-remove {
+    left: 125px;
+  }
+}

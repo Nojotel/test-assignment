@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Модальное окно</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/imask"></script>
+  </head>
+  <body>
+    <button class="button button--open-modal">Открыть форму</button>
+
+    <div class="modal">
+      <div class="modal__content">
+        <h2 class="modal__title">Стать партнёром проекта</h2>
+        <form class="form">
+          <div class="form__section">
+            <div class="form__fields">
+              <div class="form__field">
+                <input type="text" id="org-name" name="org-name" placeholder=" " required />
+                <label for="org-name"><span class="form__required-star">✱</span> Название организации</label>
+              </div>
+              <div class="form__field">
+                <input type="tel" id="phone" name="phone" placeholder=" " required />
+                <label for="phone"><span class="form__required-star">✱</span> Телефон</label>
+              </div>
+              <div class="form__field">
+                <input type="email" id="email" name="email" placeholder=" " required />
+                <label for="email"><span class="form__required-star">✱</span> E-mail</label>
+              </div>
+            </div>
+            <div class="form__upload">
+              <div class="form__upload-label"><span class="form__required-star">✱</span> Логотип (jpeg, png)</div>
+              <input type="file" id="logo" name="logo" accept="image/*" required />
+              <img class="form__upload-load" src="./image/load.svg" alt="Загрузить логотип" />
+              <img class="form__upload-remove" alt="Удалить логотип" src="./image/cross.png" />
+              <div id="logo-preview" class="form__upload-preview">
+                Выберите<br />
+                файл
+              </div>
+            </div>
+          </div>
+          <div class="form__field">
+            <select id="direction" name="direction" required>
+              <option value="" selected disabled hidden></option>
+              <option value="ecology">Экология</option>
+              <option value="education">Образование</option>
+              <option value="health">Здравоохранение</option>
+              <option value="technology">Технологии</option>
+              <option value="art">Искусство</option>
+            </select>
+            <label for="direction"><span class="form__required-star">✱</span>Направление</label>
+          </div>
+          <div class="form__field">
+            <input type="url" id="website" name="website" placeholder=" " />
+            <label for="website">Введите URL сайта</label>
+            <img src="./image/global.svg" alt="Картинка земли" />
+          </div>
+          <div class="form__field">
+            <input type="text" id="vk" name="vk" placeholder=" " />
+            <label for="vk">vk</label>
+            <img src="./image/vk.svg" alt="Вконтакте иконка" />
+          </div>
+          <div class="form__field">
+            <input type="text" id="ok" name="ok" placeholder=" " />
+            <label for="ok">ok</label>
+            <img src="./image/ok.svg" alt="Одноклассники иконка" />
+          </div>
+          <div class="form__field">
+            <input type="text" id="facebook" name="facebook" placeholder=" " />
+            <label for="facebook">facebook</label>
+            <img src="./image/facebook.svg" alt="Фейсбук иконка" />
+          </div>
+          <div class="form__field">
+            <input type="text" id="instagram" name="instagram" placeholder=" " />
+            <label for="instagram">instagram</label>
+            <img src="./image/Instagram.svg" alt="Инстаграмм иконка" />
+          </div>
+          <div class="form__field">
+            <input type="text" id="youtube" name="youtube" placeholder=" " />
+            <label for="youtube">youtube</label>
+            <img src="./image/youtube.svg" alt="Ютуб иконка" />
+          </div>
+          <div class="form__field">
+            <input type="text" id="manager" name="manager" placeholder=" " required />
+            <label for="manager">Руководитель</label>
+          </div>
+          <button type="submit" class="button button--submit" disabled>Стать партнёром проекта</button>
+          <button type="button" class="button button--close">Отменить</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
